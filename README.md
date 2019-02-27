@@ -1,4 +1,4 @@
-# TAI
+# TASK-TIMER
 
 ## Project setup
 ```
