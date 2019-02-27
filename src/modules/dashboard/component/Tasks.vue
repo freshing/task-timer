@@ -35,6 +35,9 @@
          <v-btn @click="finishTask(props.item.id)" icon color="blue" flat v-if=!props.item.is_finished>
            <v-icon>fa-square</v-icon>
          </v-btn>
+         <v-btn @click="deleteTask(props.item.id)" icon color="blue" flat v-if=props.item.is_finished>
+           <v-icon>fa-trash</v-icon>
+         </v-btn>
        </td>
      </tr>
    </template>
@@ -111,6 +114,10 @@
         }
 
         API.finishTask(id, task).then(() => this.changeTask());
+      },
+
+      deleteTask(id) {
+        API.deleteTask(id).then(() => this.changeTask());
       },
 
       selectTask(id) {

@@ -7,37 +7,43 @@ function addTask(task) {
 	return http.post('/tasks/', task, config.addCsrfHeader())
 		.then(response => {
 		})
-		.catch(() => handleApiError("Wystąpił błąd podczas wysyłania pliku. Skontaktuj się z Administratorem."));
+		.catch(() => handleApiError("Wystąpił błąd. Skontaktuj się z Administratorem."));
 }
 
 function getTasks() {
 	return http.get('/tasks/')
 		.then(response => response.data)
-		.catch(() => handleApiError("Wystąpił błąd podczas wysyłania pliku. Skontaktuj się z Administratorem."));
+		.catch(() => handleApiError("Wystąpił błąd. Skontaktuj się z Administratorem."));
 }
 
 function startTask(id, task) {
 	return http.patch('/tasks/' + id, task, config.addCsrfHeader())
 		.then(response => response.data)
-		.catch(() => handleApiError("Wystąpił błąd podczas wysyłania pliku. Skontaktuj się z Administratorem."));
+		.catch(() => handleApiError("Wystąpił błąd. Skontaktuj się z Administratorem."));
 }
 
 function pauseTask(id, task) {
 	return http.patch('/tasks/' + id, task, config.addCsrfHeader())
 		.then(response => response.data)
-		.catch(() => handleApiError("Wystąpił błąd podczas wysyłania pliku. Skontaktuj się z Administratorem."));
+		.catch(() => handleApiError("Wystąpił błąd. Skontaktuj się z Administratorem."));
 }
 
 function finishTask(id, task) {
 	return http.patch('/tasks/' + id, task, config.addCsrfHeader())
 		.then(response => response.data)
-		.catch(() => handleApiError("Wystąpił błąd podczas wysyłania pliku. Skontaktuj się z Administratorem."));
+		.catch(() => handleApiError("Wystąpił błąd. Skontaktuj się z Administratorem."));
 }
 
 function getEntries(id) {
 	return http.get('/tasks/' + id + '/entries/',)
 		.then(response => response.data)
-		.catch(() => handleApiError("Wystąpił błąd podczas wysyłania pliku. Skontaktuj się z Administratorem."));
+		.catch();
+}
+
+function deleteTask(id) {
+	return http.delete('/tasks/' + id, config.addCsrfHeader())
+		.then(response => response.data)
+		.catch();
 }
 
 
@@ -47,5 +53,6 @@ export default {
 	startTask,
 	pauseTask,
 	finishTask,
-	getEntries
+	getEntries,
+	deleteTask
 }
