@@ -15,7 +15,7 @@
                 <v-flex xs12 sm4 elevation-6>
                     <v-card class="pt-4 blue">
                         <v-card-text class="align-center white--text">
-                            <h2>TAI BOX</h2>
+                            <h2>TASK-TIMER</h2>
                         </v-card-text>
                     </v-card>
 
